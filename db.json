@@ -11,30 +11,6 @@
       "text": "Set up json-server",
       "completed": true,
       "dueDate": "2025-07-15"
-    },
-    {
-      "id": 3,
-      "text": "Implement GET request for tasks",
-      "completed": false,
-      "dueDate": "2025-07-22"
-    },
-    {
-      "id": 4,
-      "text": "Add new task functionality (POST)",
-      "completed": false,
-      "dueDate": "2025-07-23"
-    },
-    {
-      "id": 5,
-      "text": "Mark task completed (PATCH)",
-      "completed": false,
-      "dueDate": "2025-07-24"
-    },
-    {
-      "id": 6,
-      "text": "Delete task (DELETE)",
-      "completed": false,
-      "dueDate": "2025-07-25"
     }
   ]
 }
