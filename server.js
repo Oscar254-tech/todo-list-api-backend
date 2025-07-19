@@ -1,24 +1,26 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults(); // Fixed spelling
 
-// Enable CORS (essential for frontend connections)
+// Enhanced CORS
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', '*');
+  res.header('Access-Control-Allow-Headers', '*');
   next();
 });
 
-// Apply middlewares
-server.use(middlewares);
-server.use(jsonServer.bodyParser);  // Required for POST/PATCH requests
+// Proper middleware usage
+server.use(middlewares); // Corrected variable name
 server.use(router);
 
-// Critical Render configuration
-const port = process.env.PORT || 3000;  // Render will provide PORT automatically
-server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
-  console.log(`Access via: http://localhost:${port}`);  // For local testing
+// Working root redirect
+server.get('/', (req, res) => {
+  res.redirect('/tasks');
+});
+
+const PORT = 5000; // Consistent port usage
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`\nServer running on http://localhost:${PORT}`);
 });

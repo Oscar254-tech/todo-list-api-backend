@@ -1,10 +1,21 @@
 {
-  "name": "todo-list-api",
+  "name": "todo-list-api-backend",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "json-server --watch db.json --port 5000 --host 0.0.0.0",
+    "dev": "nodemon server.js",
+    "build": "echo \"No build required for JSON server\" && exit 0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d . -b main",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "json-server": "^0.17.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "nodemon": "^3.0.2"
   }
 }
