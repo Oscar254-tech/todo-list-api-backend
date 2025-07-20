@@ -1,7 +1,7 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults(); // Fixed spelling
+const middlewares = jsonServer.defaults();
 
 // Enhanced CORS
 server.use((req, res, next) => {
@@ -11,16 +11,17 @@ server.use((req, res, next) => {
   next();
 });
 
-// Proper middleware usage
-server.use(middlewares); // Corrected variable name
+// Middleware
+server.use(middlewares);
 server.use(router);
 
-// Working root redirect
+// Root redirect
 server.get('/', (req, res) => {
   res.redirect('/tasks');
 });
 
-const PORT = 5000; // Consistent port usage
+// Use Render's dynamic port or fallback to 5000
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`\nServer running on http://localhost:${PORT}`);
+  console.log(`\n Server running on port ${PORT}`);
 });
