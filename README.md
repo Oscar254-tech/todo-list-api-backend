@@ -1,38 +1,75 @@
-
 # Phase 1 Final Project
 
-# Basic To-Do List Web Application
+## Basic To-Do List Web Application
 
-## Description
-The Basic To-Do List Web Application is a simple, interactive web-based tool that allows users to create and manage their daily tasks.
-Users can add new tasks, mark them as completed, and delete them once they're no longer needed. The application is built using HTML, CSS, and JavaScript.
-This project helps demonstrate foundational front-end development skills and basic DOM manipulation.
+### Description
+The **Basic To-Do List Web Application** is a user-friendly and responsive task manager that allows users to create, view, complete, and delete their daily tasks. It uses a mock backend powered by `json-server`, and the API has been deployed to Render.
 
-## Key Features
-- Add new tasks using an input field and button
-- Display tasks dynamically in a list format
-- Mark tasks as completed by clicking on them 
-- Delete tasks from the list using a delete button
-- Clear input field after each task addition
-- User-friendly and responsive design
+This project showcases foundational web development skills using **HTML**, **CSS**, and **JavaScript**, along with the use of **Fetch API** for interacting with a backend.
 
-## Technologies Used
+---
+
+### Features
+- Add new tasks using a form
+- Tasks are stored on a mock backend (`json-server`)
+- Tasks load dynamically on page load
+- Mark tasks as completed
+- Delete tasks from the list and backend
+- Filter tasks: All / Completed / Pending
+- Each task includes a due date
+- Fully responsive layout
+
+---
+
+### Technologies Used
 - HTML
 - CSS
 - JavaScript 
-- JSON server(for mock backend)
+- JSON Server (for local API)
 - Render (for backend deployment)
-- Git and GitHub
+- Git & GitHub
 
-## Installation
-- JSON server
+---
 
-## How to Use
-- Type a task in the input box.
-- Click "Add Task" or press Enter.
-- Click the task text to toggle its completion.
-- Click Delete to remove a task.
-- Use the dropdown menu to filter tasks by completion status.
+## Getting Started Locally
+
+#### 1. Clone the Repository
+
+` ```bash
+git clone https://github.com/your-username/todo-list-app.git
+cd todo-list-app``` 
+
+### 2. Install json-server
+
+` ```bash
+npm install -g json-server
+
+### 3. Start the server
+
+` ```bash
+json-server --watch db.json --port 3000
+
+Then open index.html in your browser.
+
+## Deployed Backend (API)
+
+You can access the deployed backend here:
+https://todo-list-api-backend-1.onrender.com/tasks
+
+### This endpoint supports:
+
+- GET /tasks
+- POST /tasks
+- DELETE /tasks/:id
+- PATCH /tasks/:id
+
+## Project Structure
+- todo-list-app/
+- index.html
+- style.css
+- script.js
+- db.json
+- README.md
 
 ## Author
 Oscar Ochanda
@@ -41,7 +78,7 @@ Oscar Ochanda
 oscarochanda@gmail.com
 
 ## License
-This project is an open source and is available under the [MIT License]
+This project is an open source and is available under the MIT License
 
 
 
